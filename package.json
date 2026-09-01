@@ -16,7 +16,7 @@
     "build:dev": "VITE_AUTH_ENABLED=false vite build --mode development",
     "preview": "VITE_AUTH_ENABLED=false vite preview --host 0.0.0.0 --port 8080",
     "typecheck": "tsc --noEmit",
-    "test": "node --test 'scripts/**/*.test.mjs'",
+    "test": "node --test scripts/*.test.mjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
