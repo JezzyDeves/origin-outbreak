@@ -7,6 +7,10 @@ import { nitro } from "nitro/vite";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { grokPwaPlugin } from "./scripts/grok-pwa-plugin.mjs";
 
+// This app has no accounts. Force the template auth switch off so the client
+// bundle and the Vite/Nitro server never offer Google/X sign-in.
+process.env.VITE_AUTH_ENABLED = "false";
+
 /**
  * Finish PGLite bootstrap during dev-server setup (before traffic). Vite awaits
  * async `configureServer` hooks. Production: `src/lib/db` kicks `ensureDbReady`
