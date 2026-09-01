@@ -1,4 +1,5 @@
 import type { ErrorComponentProps } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { TriangleAlert } from "lucide-react";
 
 export function AppErrorComponent({ error, reset }: ErrorComponentProps) {
@@ -18,6 +19,22 @@ export function AppErrorComponent({ error, reset }: ErrorComponentProps) {
       >
         Try again
       </button>
+    </main>
+  );
+}
+
+export function AppNotFoundComponent() {
+  return (
+    <main className="flex min-h-dvh flex-col items-center justify-center gap-3 bg-bg px-6 text-center text-fg">
+      <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-subtle">Origin</p>
+      <h1 className="font-display text-lg font-medium">Page not found</h1>
+      <p className="max-w-md text-sm text-muted">That path isn't part of this lab.</p>
+      <Link
+        to="/"
+        className="mt-2 grid h-11 place-items-center rounded-xl bg-elevated px-5 text-sm font-medium text-fg shadow-[var(--shadow-border)]"
+      >
+        Back to the lab
+      </Link>
     </main>
   );
 }
