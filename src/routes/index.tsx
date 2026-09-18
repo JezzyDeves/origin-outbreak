@@ -4,9 +4,12 @@ import { HomeScreen } from "@/components/home-screen";
 import { DiseaseLab } from "@/components/disease-lab";
 import { SeedLab } from "@/components/seed-lab";
 import { SimView } from "@/components/sim-view";
-import { MapLookPrototype, type MapLookKey } from "@/components/map-look-prototype";
+import {
+  ClockMovementPrototype,
+  type ClockMoveKey,
+} from "@/components/clock-movement-prototype";
 
-function parseVariant(v: unknown): MapLookKey {
+function parseVariant(v: unknown): ClockMoveKey {
   if (v === "B" || v === "C" || v === "A") return v;
   return "A";
 }
@@ -26,7 +29,7 @@ function App() {
 
   if (!game) {
     return (
-      <MapLookPrototype
+      <ClockMovementPrototype
         variant={variant}
         onVariant={(key) => {
           void navigate({ search: { variant: key, game: false }, replace: true });
